@@ -1,0 +1,15 @@
+# Arquivos gerados pelo Next.js
+/frontend/.next/
+/frontend/out/
+
+# Dependencias
+/frontend/node_modules/
+
+# Variaveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Arquivos temporarios do Windows
+desktop.ini
+Thumbs.db
