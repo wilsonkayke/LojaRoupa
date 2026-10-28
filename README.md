@@ -2,7 +2,21 @@
 
 > Landing page moderna para uma marca de roupas, desenvolvida com foco em **identidade visual, apresentação de produtos e conversão de clientes através do WhatsApp**.
 
-![LojaRoupa](foto1.1.png)
+## 🖼️ Demonstração
+
+![LojaRoupa](./frontend/public/imagens/foto1.1.png)
+
+![LojaRoupa](./frontend/public/imagens/foto2.2.png)
+
+![LojaRoupa](./frontend/public/imagens/foto3.3.png)
+
+![LojaRoupa](./frontend/public/imagens/foto4.4.png)
+
+![LojaRoupa](./frontend/public/imagens/foto5.5.png)
+
+![LojaRoupa](./frontend/public/imagens/foto6.6.png)
+
+![LojaRoupa](./frontend/public/imagens/foto7.7.png)
 
 ## 📌 Sobre o projeto
 
