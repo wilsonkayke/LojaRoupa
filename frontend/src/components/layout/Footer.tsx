@@ -1,186 +1,147 @@
 import Image from "next/image";
 import {
-    
-    MessageCircle,
-    MapPin,
-    Heart,
+  MessageCircle,
+  MapPin,
+  Heart,
 } from "lucide-react";
 
 export default function Footer() {
-    return (
-        <footer className="w-full bg-[#3d2926] text-white">
-
-            {/* Conteúdo principal */}
-            <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
-                <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-
-                    {/* Marca */}
-                    <div className="lg:col-span-2">
-                        <div className="flex items-center gap-3">
-                            <Image
-                                src="/imagens/cupcake.png"
-                                alt="Logo da confeitaria"
-                                width={55}
-                                height={55}
-                                className="h-14 w-14 object-contain"
-                            />
-
-                            <div>
-                                <h2 className="text-2xl font-bold text-white">
-                                    Di Paula
-                                </h2>
-
-                                <p className="text-xs tracking-[0.2em] text-pink-200">
-                                    BOLOS ARTESANAIS
-                                </p>
-                            </div>
-                        </div>
-
-                        <p className="mt-5 max-w-md text-sm leading-7 text-white/65">
-                            Bolos artesanais preparados com carinho,
-                            ingredientes selecionados e atenção a cada
-                            detalhe para tornar seus momentos ainda mais
-                            especiais.
-                        </p>
-
-                        {/* Redes sociais */}
-                        <div className="mt-6 flex gap-3">
-                            <a
-                                href="#"
-                                aria-label="Instagram"
-                                className="
-                                    flex h-10 w-10 items-center justify-center
-                                    rounded-full bg-white/10
-                                    text-pink-200
-                                    transition-all duration-300
-                                    hover:bg-pink-500 hover:text-white
-                                "
-                            >
-                              {/** <Instagram size={19} />*/}  
-                            </a>
-
-                            <a
-                                href="#"
-                                aria-label="WhatsApp"
-                                className="
-                                    flex h-10 w-10 items-center justify-center
-                                    rounded-full bg-white/10
-                                    text-pink-200
-                                    transition-all duration-300
-                                    hover:bg-green-600 hover:text-white
-                                "
-                            >
-                                <MessageCircle size={19} />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Navegação */}
-                    <div>
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-pink-200">
-                            Navegação
-                        </h3>
-
-                        <nav className="mt-5 flex flex-col gap-3">
-                            <a
-                                href="#"
-                                className="text-sm text-white/65 transition hover:text-pink-200"
-                            >
-                                Início
-                            </a>
-
-                            <a
-                                href="#sobre"
-                                className="text-sm text-white/65 transition hover:text-pink-200"
-                            >
-                                Sobre nós
-                            </a>
-
-                            <a
-                                href="#diferenciais"
-                                className="text-sm text-white/65 transition hover:text-pink-200"
-                            >
-                                Diferenciais
-                            </a>
-
-                            <a
-                                href="#galeria"
-                                className="text-sm text-white/65 transition hover:text-pink-200"
-                            >
-                                Galeria
-                            </a>
-
-                            <a
-                                href="#depoimentos"
-                                className="text-sm text-white/65 transition hover:text-pink-200"
-                            >
-                                Depoimentos
-                            </a>
-                        </nav>
-                    </div>
-
-                    {/* Contato */}
-                    <div>
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-pink-200">
-                            Fale conosco
-                        </h3>
-
-                        <div className="mt-5 space-y-4">
-
-                            <a
-                                href="#"
-                                className="flex items-start gap-3 text-sm text-white/65 transition hover:text-pink-200"
-                            >
-                                <MessageCircle
-                                    size={18}
-                                    className="mt-0.5 shrink-0"
-                                />
-
-                                <span>
-                                    Faça seu pedido pelo WhatsApp
-                                </span>
-                            </a>
-
-                            <div className="flex items-start gap-3 text-sm text-white/65">
-                                <MapPin
-                                    size={18}
-                                    className="mt-0.5 shrink-0"
-                                />
-
-                                <span>
-                                    Feira de Santana - Bahia
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <footer className="border-t border-white/10 bg-[#181818] px-6 pt-16 text-white">
+      <div className="mx-auto max-w-7xl">
+        {/* Parte principal */}
+        <div className="grid gap-12 pb-14 md:grid-cols-2 lg:grid-cols-4">
+          
+          {/* Marca */}
+          <div className="lg:col-span-2">
+            <div className="mb-6">
+              <Image
+                src="/imagens/logo.png"
+                alt="Logo da marca"
+                width={140}
+                height={50}
+                className="h-auto w-auto object-contain"
+              />
             </div>
 
-            {/* Copyright */}
-            <div className="border-t border-white/10">
-                <div
-                    className="
-                        mx-auto flex max-w-7xl flex-col
-                        items-center justify-between gap-3
-                        px-6 py-5 text-center
-                        sm:flex-row sm:text-left
-                    "
+            <p className="max-w-md text-sm leading-6 text-white/50">
+              Estilo, personalidade e atitude em cada peça.
+              Uma coleção criada para quem não tem medo de
+              mostrar quem é.
+            </p>
+
+            <div className="mt-6 flex items-center gap-2 text-sm text-white/40">
+              <Heart
+                size={16}
+                strokeWidth={1.5}
+                className="text-[#B89B7A]"
+              />
+              Feito para você.
+            </div>
+          </div>
+
+          {/* Navegação */}
+          <div>
+            <h3 className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-white">
+              Navegação
+            </h3>
+
+            <ul className="space-y-3 text-sm text-white/50">
+              <li>
+                <a
+                  href="#inicio"
+                  className="transition hover:text-[#B89B7A]"
                 >
-                    <p className="text-xs text-white/45">
-                        © {new Date().getFullYear()} Di Paula.
-                        Todos os direitos reservados.
-                    </p>
+                  Início
+                </a>
+              </li>
 
-                    <p className="flex items-center gap-1 text-xs text-white/45">
-                        Feito com
-                        <Heart
-                            size={13}
-                            fill="currentColor"
-                            className="text-pink-400"
-                        />
-                    </p>
-                </div>
+              <li>
+                <a
+                  href="#colecao"
+                  className="transition hover:text-[#B89B7A]"
+                >
+                  Coleção
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#sobre"
+                  className="transition hover:text-[#B89B7A]"
+                >
+                  Sobre nós
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#contato"
+                  className="transition hover:text-[#B89B7A]"
+                >
+                  Contato
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Atendimento */}
+          <div>
+            <h3 className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-white">
+              Atendimento
+            </h3>
+
+            <div className="space-y-4 text-sm text-white/50">
+              <div className="flex items-start gap-3">
+                <MessageCircle
+                  size={18}
+                  strokeWidth={1.5}
+                  className="mt-0.5 shrink-0 text-[#B89B7A]"
+                />
+
+                <span>
+                  Fale conosco pelo WhatsApp
+                </span>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <MapPin
+                  size={18}
+                  strokeWidth={1.5}
+                  className="mt-0.5 shrink-0 text-[#B89B7A]"
+                />
+
+                <span>
+                  Atendimento online
+                </span>
+              </div>
             </div>
-        </footer>
-    );
+          </div>
+        </div>
+
+        {/* Linha inferior */}
+        <div className="flex flex-col gap-4 border-t border-white/10 py-6 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} Sua Marca. Todos os direitos reservados.
+          </p>
+
+          <div className="flex gap-6">
+            <a
+              href="#"
+              className="transition hover:text-white"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="#"
+              className="transition hover:text-white"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }

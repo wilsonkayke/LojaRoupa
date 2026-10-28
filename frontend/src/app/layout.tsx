@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import "./globals.css"; 
 
 export const metadata: Metadata = {
-  title: "Dom da Bia",
-  description: "Bolos e Salgados",
+  title: "Loja roupa",
+  description: "Vendas de roupas, coleção de grife e marcas",
   openGraph:{
-    title: "Dom da Bia. O melhor salgados que você vai comer!",
-    description: "Aqui você pede sua encomenda e ganha um dia inteiro de felicidades",
+    title: "Loja de roupa, coleção de marcas",
+    description: "Aqui você compra suas roupas online com segurança e uma qualidade fora do normal.",
     //Para adicionar imagens 
     images: ['https://adicineaquiumaimagem.com/suaimagem'],
   },

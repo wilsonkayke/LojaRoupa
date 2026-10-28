@@ -1,151 +1,100 @@
-import { MessageCircle, CakeSlice, CheckCircle2, Heart } from "lucide-react";
+import {
+  ShoppingBag,
+  CreditCard,
+  PackageCheck,
+} from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    icon: CakeSlice,
-    title: "Escolha seu bolo",
+    icon: ShoppingBag,
+    title: "Escolha suas peças",
     description:
-      "Escolha um dos nossos sabores ou conte para nós como você imaginou o seu bolo.",
+      "Explore nossa coleção e encontre as peças que combinam com o seu estilo.",
   },
   {
     number: "02",
-    icon: MessageCircle,
-    title: "Fale conosco",
+    icon: CreditCard,
+    title: "Faça seu pedido",
     description:
-      "Entre em contato pelo WhatsApp e envie os detalhes da sua encomenda.",
+      "Escolha o tamanho, adicione ao carrinho e finalize sua compra de forma simples.",
   },
   {
     number: "03",
-    icon: CheckCircle2,
-    title: "Confirme seu pedido",
+    icon: PackageCheck,
+    title: "Receba seu pedido",
     description:
-      "Combinamos sabor, tamanho, decoração, data e todos os detalhes do seu pedido.",
-  },
-  {
-    number: "04",
-    icon: Heart,
-    title: "Receba com carinho",
-    description:
-      "Preparamos tudo com cuidado para que seu bolo deixe seu momento ainda mais especial.",
+      "Agora é só esperar. Preparamos tudo e enviamos sua compra até você.",
   },
 ];
 
 export default function Steps() {
   return (
-    <section
-      id="encomendas"
-      className="w-full bg-[#f5e0e0] py-16 sm:py-20"
-    >
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-[#111111] px-6 py-24 text-white">
+      <div className="mx-auto max-w-7xl">
 
-        {/* TÍTULO */}
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold tracking-wide text-pink-500 shadow-sm sm:text-sm">
-            ❤️ É simples e rápido
-          </span>
+        {/* Cabeçalho */}
+        <div className="mx-auto mb-16 max-w-2xl text-center">
 
-          <h2 className="mt-5 text-3xl font-bold leading-tight text-[#4a2e2b] sm:text-4xl">
-            Como fazer sua{" "}
-            <span className="text-pink-500">encomenda?</span>
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#B89B7A]">
+            Simples assim
+          </p>
+
+          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+            Seu estilo em
+            <span className="text-[#B89B7A]"> poucos passos.</span>
           </h2>
 
-          <p className="mt-4 text-base leading-7 text-gray-600 sm:text-lg">
-            Do primeiro contato até o momento de saborear seu bolo,
-            cuidamos de cada detalhe com carinho.
+          <p className="mt-5 text-base leading-7 text-white/50">
+            Encontre suas peças favoritas, faça seu pedido e
+            receba tudo no conforto da sua casa.
           </p>
+
         </div>
 
-        {/* PASSOS */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Etapas */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+
           {steps.map((step) => {
             const Icon = step.icon;
 
             return (
               <div
                 key={step.number}
-                className="
-                  group
-                  relative
-                  rounded-3xl
-                  bg-white
-                  p-6
-                  text-center
-                  shadow-sm
-                  transition-all
-                  duration-300
-                  hover:-translate-y-2
-                  hover:shadow-xl
-                "
+                className="group relative border border-white/10 bg-[#181818] p-8 transition duration-300 hover:border-[#B89B7A]/50"
               >
+
                 {/* Número */}
-                <div className="absolute right-5 top-5 text-sm font-bold text-pink-200">
-                  {step.number}
+                <div className="mb-10 flex items-center justify-between">
+
+                  <span className="text-sm font-medium tracking-[0.2em] text-[#B89B7A]">
+                    {step.number}
+                  </span>
+
+                  <div className="flex h-11 w-11 items-center justify-center border border-white/10 text-white/70 transition duration-300 group-hover:border-[#B89B7A] group-hover:text-[#B89B7A]">
+                    <Icon size={20} strokeWidth={1.5} />
+                  </div>
+              
                 </div>
 
-                {/* Ícone */}
-                <div
-                  className="
-                    mx-auto
-                    flex
-                    h-16
-                    w-16
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-pink-50
-                    text-pink-500
-                    transition
-                    duration-300
-                    group-hover:scale-110
-                  "
-                >
-                  <Icon size={30} strokeWidth={1.8} />
-                </div>
-
-                {/* Título */}
-                <h3 className="mt-5 text-lg font-bold text-[#4a2e2b]">
+                {/* Conteúdo */}
+                <h3 className="text-xl font-medium">
                   {step.title}
                 </h3>
 
-                {/* Descrição */}
-                <p className="mt-3 text-sm leading-6 text-gray-600">
+                <p className="mt-4 text-sm leading-6 text-white/50">
                   {step.description}
                 </p>
+
+                {/* Linha decorativa */}
+                <div className="mt-8 h-px w-0 bg-[#B89B7A] transition-all duration-500 group-hover:w-full" />
+
               </div>
             );
           })}
+
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <a
-            href="https://wa.me/5599999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              inline-flex
-              items-center
-              justify-center
-              gap-3
-              rounded-full
-              bg-green-600
-              px-7
-              py-4
-              font-semibold
-              text-white
-              shadow-lg
-              transition-all
-              duration-300
-              hover:scale-105
-              hover:bg-green-700
-              hover:shadow-xl
-            "
-          >
-            <MessageCircle size={21} />
-            Quero fazer minha encomenda
-          </a>
-        </div>
       </div>
     </section>
   );

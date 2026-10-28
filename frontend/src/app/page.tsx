@@ -17,8 +17,7 @@ export default function Home() {
   return (
     <>
       <Topbar />
-      <Hero />
-      <Stats />
+      <Hero />  
       <Products />
       <Features />
       <Gallery />

@@ -9,122 +9,85 @@ import WhatsAppButton from "../ui/WhatsAppButton";
 export default function Topbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const menuItems = [
+    { name: "Início", href: "#inicio" },
+    { name: "Coleção", href: "#colecao" },
+    { name: "Sobre nós", href: "#sobre" },
+    { name: "Contato", href: "#contato" },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-pink-100 bg-[#FEF9F9]/95 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
-        {/* BOTÃO MENU - MOBILE */}
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#111111]/95 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-12">
+        
+        {/* Logo */}
+        <a href="#inicio" className="relative z-50">
+          <Image
+            src="/imagens/"
+            alt="Logo da marca"
+            width={121}
+            height={117}
+            priority
+            className="h-auto w-auto object-contain"
+          />
+        </a>
+
+        {/* Navegação desktop */}
+        <nav className="hidden items-center gap-8 md:flex">
+          {menuItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm text-white/60 transition duration-300 hover:text-white"
+            >
+              {item.name}
+            </a>
+          ))}
+        </nav>
+
+        {/* Ações desktop */}
+        <div className="hidden md:block">
+          <WhatsAppButton />
+        </div>
+
+        {/* Botão menu mobile */}
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-full text-[#4a2e2b] transition hover:bg-pink-100 md:hidden"
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={menuOpen}
+          className="relative z-50 flex h-10 w-10 items-center justify-center text-white md:hidden"
         >
-          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+          {menuOpen ? (
+            <X size={24} strokeWidth={1.5} />
+          ) : (
+            <Menu size={24} strokeWidth={1.5} />
+          )}
         </button>
-
-        {/* LOGO */}
-        <a
-          href="#inicio"
-          className="absolute left-1/2 flex -translate-x-1/2 items-center md:static md:translate-x-0"
-        >
-          <Image
-            src="/imagens/cupcake.png"
-            alt="Logo Dom da Bia"
-            width={55}
-            height={55}
-            className="h-12 w-12 object-contain sm:h-14 sm:w-14"
-          />
-
-          <div className="ml-2 hidden flex-col sm:flex">
-            <span className="font-serif text-2xl font-bold text-[#4a2e2b] lg:text-3xl">
-              Di Paula
-            </span>
-
-            <span className="text-[10px] font-semibold tracking-[0.2em] text-[#a87c7c]">
-              BOLOS ARTESANAIS
-            </span>
-          </div>
-        </a>
-
-        {/* MENU DESKTOP */}
-        <nav className="hidden items-center gap-6 text-sm font-medium text-[#4a2e2b] lg:flex">
-          <a href="#inicio" className="transition hover:text-pink-500">
-            Início
-          </a>
-
-          <a href="#bolos" className="transition hover:text-pink-500">
-            Cardápio
-          </a>
-
-          <a href="#encomendas" className="transition hover:text-pink-500">
-            Encomendas
-          </a>
-
-          <a href="#sobre" className="transition hover:text-pink-500">
-            Quem somos
-          </a>
-
-          <a href="#depoimentos" className="transition hover:text-pink-500">
-            Depoimentos
-          </a>
-        </nav>
-
-        {/* WHATSAPP DESKTOP */}
-        <div className="hidden md:block">
-          <Image
-            src="/imagens/whatsApp_header.png"
-            alt="WhatsApp"
-            width={24}
-            height={24}
-          />
-        </div>
-
-        {/* WHATSAPP MOBILE */}
-        <div>
-          <a
-            href="https://wa.me/5599999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-green-800 shadow-lg transition hover:scale-105 md:hidden"
-            aria-label="Falar pelo WhatsApp"
-          >
-            <Image
-              src="/imagens/whatsApp_header.png"
-              alt=""
-              width={24}
-              height={24}
-            />
-          </a>
-        </div>
       </div>
 
-      {/* MENU MOBILE */}
-      {menuOpen && (
-        <nav className="border-t border-pink-100 bg-[#FEF9F9] px-6 py-6 md:hidden">
-          <div className="flex flex-col gap-5 text-base font-medium text-[#4a2e2b]">
-            <a href="#inicio" onClick={() => setMenuOpen(false)}>
-              Início
+      {/* Menu mobile */}
+      <div
+        className={`overflow-hidden border-t border-white/10 bg-[#111111] transition-all duration-300 md:hidden ${
+          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <nav className="flex flex-col px-6 py-6">
+          {menuItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="border-b border-white/10 py-4 text-sm uppercase tracking-wider text-white/70 transition hover:text-[#B89B7A]"
+            >
+              {item.name}
             </a>
+          ))}
 
-            <a href="#bolos" onClick={() => setMenuOpen(false)}>
-              Cardápio
-            </a>
-
-            <a href="#encomendas" onClick={() => setMenuOpen(false)}>
-              Encomendas
-            </a>
-
-            <a href="#sobre" onClick={() => setMenuOpen(false)}>
-              Quem somos
-            </a>
-
-            <a href="#depoimentos" onClick={() => setMenuOpen(false)}>
-              Depoimentos
-            </a>
+          <div className="pt-6">
+            <WhatsAppButton />
           </div>
         </nav>
-      )}
+      </div>
     </header>
   );
 }

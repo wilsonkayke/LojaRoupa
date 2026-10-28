@@ -1,121 +1,107 @@
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
-    {
-        name: "Mariana Silva",
-        text: "O bolo ficou simplesmente perfeito! Além de lindo, estava muito gostoso. Todo mundo amou!",
-        occasion: "Aniversário",
-    },
-    {
-        name: "Ana Paula",
-        text: "Fui muito bem atendida desde o primeiro contato. O bolo ficou exatamente como eu imaginava.",
-        occasion: "Comemoração",
-    },
-    {
-        name: "Camila Oliveira",
-        text: "Muito capricho em cada detalhe. O sabor estava maravilhoso e a decoração ficou linda!",
-        occasion: "Festa de aniversário",
-    },
+  {
+    name: "Ana Clara",
+    username: "@anaclara",
+    text: "As peças são lindas e o acabamento é impecável. Já estou querendo comprar a próxima coleção.",
+  },
+  {
+    name: "Lucas Martins",
+    username: "@lucasm",
+    text: "A qualidade superou minhas expectativas. A roupa veste muito bem e chegou bem rápido.",
+  },
+  {
+    name: "Mariana Silva",
+    username: "@maris",
+    text: "Finalmente encontrei uma loja que combina com meu estilo. As peças são muito estilosas.",
+  },
 ];
 
 export default function Testimonials() {
-    return (
-        <section
-            id="depoimentos"
-            className="w-full bg-[#fffafa] py-16 sm:py-20"
-        >
-            <div className="mx-auto max-w-7xl px-6">
+  return (
+    <section className="bg-[#181818] px-6 py-24 text-white">
+      <div className="mx-auto max-w-7xl">
 
-                {/* Cabeçalho */}
-                <div className="mx-auto max-w-2xl text-center">
-                    <span className="inline-flex items-center rounded-full bg-pink-50 px-4 py-2 text-xs font-bold tracking-wide text-pink-500 shadow-sm sm:text-sm">
-                        ❤️ QUEM EXPERIMENTA, APROVA
-                    </span>
+        {/* Cabeçalho */}
+        <div className="mb-14 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
 
-                    <h2 className="mt-5 text-3xl font-bold leading-tight text-[#4a2e2b] sm:text-4xl">
-                        O que nossos{" "}
-                        <span className="text-pink-500">
-                            clientes dizem
-                        </span>
-                    </h2>
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#B89B7A]">
+              Quem usa, recomenda
+            </p>
 
-                    <p className="mt-4 text-base leading-7 text-gray-600 sm:text-lg">
-                        Nada melhor do que ouvir de quem já experimentou
-                        nossos bolos.
-                    </p>
-                </div>
+            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              O que estão dizendo.
+            </h2>
+          </div>
 
-                {/* Depoimentos */}
-                <div className="mt-12 grid gap-6 md:grid-cols-3">
-                    {testimonials.map((testimonial) => (
-                        <div
-                            key={testimonial.name}
-                            className="
-                                group relative rounded-3xl bg-white
-                                p-6 shadow-sm
-                                transition-all duration-300
-                                hover:-translate-y-2 hover:shadow-xl
-                            "
-                        >
-                            {/* Aspas decorativas */}
-                            <div className="absolute right-6 top-5 text-pink-100">
-                                <Quote size={42} />
-                            </div>
-
-                            {/* Estrelas */}
-                            <div className="flex gap-1">
-                                {[...Array(5)].map((_, index) => (
-                                    <Star
-                                        key={index}
-                                        size={18}
-                                        fill="currentColor"
-                                        className="text-pink-400"
-                                    />
-                                ))}
-                            </div>
-
-                            {/* Depoimento */}
-                            <p className="relative mt-5 text-sm leading-7 text-gray-600">
-                                "{testimonial.text}"
-                            </p>
-
-                            {/* Cliente */}
-                            <div className="mt-6 flex items-center gap-3 border-t border-pink-50 pt-5">
-                                <div
-                                    className="
-                                        flex h-11 w-11 shrink-0
-                                        items-center justify-center
-                                        rounded-full bg-pink-100
-                                        font-bold text-pink-500
-                                    "
-                                >
-                                    {testimonial.name.charAt(0)}
-                                </div>
-
-                                <div>
-                                    <h3 className="text-sm font-bold text-[#4a2e2b]">
-                                        {testimonial.name}
-                                    </h3>
-
-                                    <p className="text-xs text-gray-500">
-                                        {testimonial.occasion}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Frase final */}
-                <div className="mt-10 text-center">
-                    <p className="text-sm text-gray-500 sm:text-base">
-                        Seu próximo depoimento pode estar aqui.{" "}
-                        <span className="font-semibold text-[#4a2e2b]">
-                            ❤️
-                        </span>
-                    </p>
-                </div>
+          <div className="flex items-center gap-2 text-sm text-white/60">
+            <div className="flex gap-1 text-[#B89B7A]">
+              <Star size={16} fill="currentColor" />
+              <Star size={16} fill="currentColor" />
+              <Star size={16} fill="currentColor" />
+              <Star size={16} fill="currentColor" />
+              <Star size={16} fill="currentColor" />
             </div>
-        </section>
-    );
+
+            <span>5.0 de satisfação</span>
+          </div>
+
+        </div>
+
+        {/* Depoimentos */}
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+
+          {testimonials.map((testimonial) => (
+            <article
+              key={testimonial.username}
+              className="group relative border border-white/10 bg-[#111111] p-7 transition duration-300 hover:border-[#B89B7A]/50"
+            >
+
+              {/* Aspas */}
+              <Quote
+                size={32}
+                strokeWidth={1}
+                className="absolute right-6 top-6 text-[#B89B7A]/30"
+              />
+
+              {/* Estrelas */}
+              <div className="mb-8 flex gap-1 text-[#B89B7A]">
+                {[...Array(5)].map((_, index) => (
+                  <Star
+                    key={index}
+                    size={15}
+                    fill="currentColor"
+                    strokeWidth={1}
+                  />
+                ))}
+              </div>
+
+              {/* Depoimento */}
+              <p className="min-h-[120px] text-base leading-7 text-white/70">
+                "{testimonial.text}"
+              </p>
+
+              {/* Usuário */}
+              <div className="mt-8 border-t border-white/10 pt-5">
+
+                <p className="text-sm font-medium">
+                  {testimonial.name}
+                </p>
+
+                <p className="mt-1 text-xs text-white/40">
+                  {testimonial.username}
+                </p>
+
+              </div>
+
+            </article>
+          ))}
+
+        </div>
+
+      </div>
+    </section>
+  );
 }

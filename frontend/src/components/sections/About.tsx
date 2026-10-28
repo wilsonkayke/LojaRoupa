@@ -1,145 +1,75 @@
 import Image from "next/image";
-import { Heart, Sparkles, CakeSlice } from "lucide-react";
-
-const highlights = [
-    {
-        icon: Heart,
-        text: "Feito com amor",
-    },
-    {
-        icon: CakeSlice,
-        text: "Sabor artesanal",
-    },
-    {
-        icon: Sparkles,
-        text: "Cada detalhe importa",
-    },
-];
+import { ArrowUpRight } from "lucide-react";
 
 export default function About() {
-    return (
-        <section
-            id="sobre"
-            className="w-full bg-[#f5e0e0] py-16 sm:py-20"
-        >
-            <div className="mx-auto max-w-7xl px-6">
+  return (
+    <section className="bg-[#181818] px-6 py-24 text-white">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
-                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        {/* Imagem */}
+        <div className="group relative aspect-[4/5] overflow-hidden bg-[#111111]">
 
-                    {/* Imagem */}
-                    <div className="relative order-2 lg:order-1">
-                        {/* Elemento decorativo */}
-                        <div className="absolute -left-4 -top-4 h-24 w-24 rounded-full bg-pink-300/30 blur-2xl" />
+          <Image
+            src="/imagens/foto8.jpg"
+            alt="Modelo usando peças da coleção"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover transition duration-700 group-hover:scale-105"
+          />
 
-                        <div className="relative overflow-hidden rounded-[2rem] bg-white p-3 shadow-xl">
-                            <Image
-                                src="/imagens/bolo_principal1.png"
-                                alt="Bolo artesanal preparado pela nossa confeitaria"
-                                width={700}
-                                height={700}
-                                className="
-                                    h-[320px] w-full rounded-[1.5rem]
-                                    object-cover
-                                    sm:h-[420px]
-                                "
-                            />
-                        </div>
+          <div className="absolute inset-0 bg-black/10" />
 
-                        {/* Card sobreposto */}
-                        <div
-                            className="
-                                absolute -bottom-5 -right-2
-                                rounded-2xl bg-white px-5 py-4
-                                shadow-lg sm:-right-5
-                            "
-                        >
-                            <p className="text-xs font-medium text-gray-500">
-                                Preparado com
-                            </p>
+          {/* Texto sobre a imagem */}
+          <div className="absolute bottom-6 left-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+              Estilo sem regras
+            </p>
+          </div>
 
-                            <p className="mt-1 font-bold text-[#4a2e2b]">
-                                muito carinho ❤️
-                            </p>
-                        </div>
-                    </div>
+        </div>
 
-                    {/* Conteúdo */}
-                    <div className="order-1 lg:order-2">
+        {/* Conteúdo */}
+        <div className="max-w-xl">
 
-                        <span
-                            className="
-                                inline-flex items-center rounded-full
-                                bg-white px-4 py-2
-                                text-xs font-bold tracking-wide
-                                text-pink-500 shadow-sm
-                                sm:text-sm
-                            "
-                        >
-                            ✨ SOBRE A NOSSA CONFEITARIA
-                        </span>
+          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#B89B7A]">
+            Sobre a marca
+          </p>
 
-                        <h2
-                            className="
-                                mt-5 text-3xl font-bold
-                                leading-tight text-[#4a2e2b]
-                                sm:text-4xl
-                            "
-                        >
-                            Transformando ingredientes
-                            <span className="text-pink-500">
-                                {" "}em momentos especiais.
-                            </span>
-                        </h2>
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            Não é apenas
+            <br />
+            uma roupa.
+            <br />
+            <span className="text-[#B89B7A]">É você.</span>
+          </h2>
 
-                        <div className="mt-5 space-y-4 text-base leading-7 text-gray-600">
-                            <p>
-                                Tudo começou com o desejo de transformar o
-                                amor pela confeitaria em momentos especiais
-                                para outras pessoas.
-                            </p>
+          <p className="mt-8 text-base leading-7 text-white/60">
+            Acreditamos que estilo é uma forma de expressão.
+            Criamos peças para pessoas que não têm medo de
+            mostrar sua personalidade e transformar o cotidiano
+            em algo único.
+          </p>
 
-                            <p>
-                                Cada bolo é preparado de forma artesanal,
-                                pensando não apenas no sabor, mas também em
-                                todos os detalhes que tornam uma comemoração
-                                inesquecível.
-                            </p>
+          <p className="mt-5 text-base leading-7 text-white/60">
+            Nossa coleção combina conforto, personalidade e
+            tendências para acompanhar diferentes estilos,
+            momentos e histórias.
+          </p>
 
-                            <p>
-                                Para nós, um bolo não é apenas uma sobremesa.
-                                É parte de uma história, de uma celebração e
-                                de uma memória que ficará para sempre.
-                            </p>
-                        </div>
+          {/* Link */}
+          <button className="group mt-8 flex items-center gap-3 border-b border-[#B89B7A] pb-2 text-sm font-medium uppercase tracking-wider text-white transition hover:text-[#B89B7A]">
+            Conheça nossa história
 
-                        {/* Diferenciais */}
-                        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-                            {highlights.map((item) => {
-                                const Icon = item.icon;
+            <ArrowUpRight
+              size={18}
+              strokeWidth={1.5}
+              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+            />
+          </button>
 
-                                return (
-                                    <div
-                                        key={item.text}
-                                        className="
-                                            flex items-center gap-3
-                                            rounded-2xl bg-white
-                                            px-4 py-3 shadow-sm
-                                        "
-                                    >
-                                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-pink-50 text-pink-500">
-                                            <Icon size={18} />
-                                        </div>
+        </div>
 
-                                        <span className="text-sm font-semibold text-[#4a2e2b]">
-                                            {item.text}
-                                        </span>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+      </div>
+    </section>
+  );
 }
